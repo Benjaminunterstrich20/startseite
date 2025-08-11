@@ -27,11 +27,12 @@
       width: 60%;
       margin-left: auto;
       margin-right: auto;
+      max-width: 600px;
     }
     .search-box input {
       width: 100%;
       padding: 8px 10px 8px 40px; /* Padding links für Icon */
-      font-size: 1em; /* Schrift kleiner */
+      font-size: 1em;
       border-radius: 5px;
       border: none;
     }
@@ -50,7 +51,7 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 30px;
-      margin-bottom: 60px;
+      margin-bottom: 40px;
     }
     .icon {
       width: 80px;
@@ -74,6 +75,66 @@
     }
     .icon-container {
       text-align: center;
+    }
+    /* Favoriten Liste */
+    .favorites {
+      color: gold;
+      font-size: 1em;
+      margin: 20px auto 60px;
+      max-width: 400px;
+      padding: 0 15px;
+      text-align: left;
+    }
+    .favorites strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      text-align: center;
+    }
+    .favorites ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .favorites ul li a {
+      color: gold;
+      text-decoration: none;
+      word-break: break-word;
+      font-weight: bold;
+      font-size: 1em;
+      transition: color 0.3s;
+    }
+    .favorites ul li a:hover {
+      color: orange;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .clock {
+        font-size: 2.5em;
+        margin-top: 60px;
+      }
+      .date {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+      }
+      .search-box {
+        width: 90%;
+      }
+      .icon {
+        width: 60px;
+        height: 60px;
+        font-size: 0.75em;
+      }
+      .favorites {
+        max-width: 90%;
+        font-size: 0.9em;
+        margin-bottom: 40px;
+      }
     }
   </style>
   <script>
@@ -99,20 +160,31 @@
 
   <div class="icons">
     <div class="icon-container">
-      <a href="https://www.koeln-bonn-airport.de" class="icon">CGN</a>
+      <a href="https://www.koeln-bonn-airport.de" class="icon" title="CGN">CGN</a>
     </div>
     <div class="icon-container">
-      <a href="https://ber.berlin-airport.de" class="icon">BER</a>
+      <a href="https://ber.berlin-airport.de" class="icon" title="BER">BER</a>
     </div>
     <div class="icon-container">
-      <a href="https://www.youtube.com" class="icon">YT</a>
+      <a href="https://www.youtube.com" class="icon" title="YouTube">YT</a>
     </div>
     <div class="icon-container">
-      <a href="https://www.eurowings.com" class="icon">EW</a>
+      <a href="https://www.eurowings.com" class="icon" title="Eurowings">EW</a>
     </div>
     <div class="icon-container">
-      <a href="https://www.netflix.com" class="icon">Netflix</a>
+      <a href="https://www.netflix.com" class="icon" title="Netflix">Netflix</a>
     </div>
+  </div>
+
+  <div class="favorites">
+    <strong>Deine Favoriten:</strong>
+    <ul>
+      <li><a href="https://www.koeln-bonn-airport.de" target="_blank" rel="noopener noreferrer">CGN Airport</a></li>
+      <li><a href="https://ber.berlin-airport.de" target="_blank" rel="noopener noreferrer">BER Airport</a></li>
+      <li><a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+      <li><a href="https://www.eurowings.com" target="_blank" rel="noopener noreferrer">Eurowings</a></li>
+      <li><a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer">Netflix</a></li>
+    </ul>
   </div>
 </body>
 </html>
