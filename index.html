@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meine coole Startseite</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .clock { font-size: 3em; margin-top: 100px; }
+    .date { font-size: 2em; margin-bottom: 40px; }
+    .search { margin-bottom: 60px; }
+    .search input {
+      width: 60%;
+      padding: 12px;
+      font-size: 1.2em;
+      border-radius: 6px;
+      border: none;
+    }
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px 60px;
+    }
+    .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #333;
+      transition: transform 0.2s;
+    }
+    .icon img {
+      max-width: 70%;
+      max-height: 70%;
+    }
+    .icon:hover {
+      transform: scale(1.1);
+    }
+  </style>
+  <script>
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('time').textContent = now.toLocaleTimeString('de-DE', {hour: '2-digit', minute: '2-digit'});
+      document.getElementById('date').textContent = now.toLocaleDateString('de-DE');
+    }
+    setInterval(updateClock, 1000);
+    window.onload = updateClock;
+  </script>
+</head>
+<body>
+  <div class="clock" id="time"></div>
+  <div class="date" id="date"></div>
+  <div class="search">
+    <form action="https://www.google.com/search" method="get">
+      <input type="text" name="q" placeholder="Mit Google suchen oder Adresse eingeben">
+    </form>
+  </div>
+  <div class="icons">
+    <a href="https://www.koeln-bonn-airport.de" class="icon"><img src="logo-cgn.png" alt="CGN"></a>
+    <a href="https://ber.berlin-airport.de" class="icon"><img src="logo-ber.png" alt="BER"></a>
+    <a href="https://www.youtube.com" class="icon"><img src="logo-youtube.png" alt="YouTube"></a>
+    <a href="https://www.eurowings.com" class="icon"><img src="logo-eurowings.png" alt="Eurowings"></a>
+    <a href="https://de.wikipedia.org" class="icon"><img src="logo-wikipedia.png" alt="Wikipedia"></a>
+    <a href="https://www.netflix.com" class="icon"><img src="logo-netflix.png" alt="Netflix"></a>
+    <a href="https://www.amazon.de/video" class="icon"><img src="logo-amazonvideo.png" alt="Amazon Video"></a>
+  </div>
+</body>
+</html>
