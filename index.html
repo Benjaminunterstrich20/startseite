@@ -23,13 +23,27 @@
     }
     .search-box {
       margin-bottom: 60px;
+      position: relative;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
     }
     .search-box input {
-      width: 60%;
-      padding: 10px;
+      width: 100%;
+      padding: 10px 10px 10px 40px; /* Platz für Icon links */
       font-size: 1.2em;
       border-radius: 5px;
       border: none;
+    }
+    .search-box .google-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+      opacity: 0.7;
     }
     .icons {
       display: flex;
@@ -78,6 +92,7 @@
 
   <div class="search-box">
     <form action="https://www.google.com/search" method="GET">
+      <img class="google-icon" src="https://www.google.com/favicon.ico" alt="Google" />
       <input type="text" name="q" placeholder="Mit Google suchen oder Adresse eingeben" />
     </form>
   </div>
@@ -93,12 +108,14 @@
       <a href="https://www.youtube.com" class="icon">YT</a>
     </div>
     <div class="icon-container">
+      <a href="https://de.wikipedia.org" class="icon">Wiki</a>
+    </div>
+    <div class="icon-container">
       <a href="https://www.eurowings.com" class="icon">EW</a>
     </div>
     <div class="icon-container">
-      <a href="https://www.netflix.com" class="icon">NF</a>
+      <a href="https://www.netflix.com" class="icon">Netflix</a>
     </div>
   </div>
 </body>
 </html>
-
